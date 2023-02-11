@@ -55,6 +55,8 @@ function editarContenido(id){
     var idcontenido = id;
     document.querySelector('#tituloModal').innerHTML = 'Actualizar Contenido';
     document.querySelector('#action').innerHTML = 'Actualizar';
+    document.querySelector('#formContenido').reset();
+    $('#modalContenido').modal('show');
 
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTPP');
     var url = './models/contenido/edit-contenido.php?idcontenido='+idcontenido;
@@ -69,7 +71,7 @@ function editarContenido(id){
             document.querySelector('#descripcion').value = data.data.descripcion;
             //document.querySelector('#file').value = data.data.material;
 
-            $('modalContenido').modal('show');
+           // $('modalContenido').modal('show');
         } else {
             console.log(data.msg);
             swal('Atencion',data.msg,'error');

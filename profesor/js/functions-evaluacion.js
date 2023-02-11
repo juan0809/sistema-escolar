@@ -56,7 +56,10 @@ function editarEvaluacion(id){
     var idevaluacion = id;
     document.querySelector('#tituloModal').innerHTML = 'Actualizar Evaluacion';
     document.querySelector('#action').innerHTML = 'Actualizar';
-
+   
+    document.querySelector('#formEvaluacion').reset();
+    $('#modalEvaluacion').modal('show');
+    
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTPP');
     var url = './models/evaluacion/edit-evaluacion.php?idevaluacion='+ idevaluacion;
     request.open('GET',url,true);
@@ -71,7 +74,7 @@ function editarEvaluacion(id){
             document.querySelector('#fecha').value = data.data.fecha;
             document.querySelector('#porcentaje').value = data.data.porcentaje;
 
-            $('modalEvaluacion').modal('show');
+           // $('modalEvaluacion').modal('show');
         } else {
             swal('Atencion',data.msg,'error');
                 }

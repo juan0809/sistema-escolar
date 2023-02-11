@@ -26,6 +26,8 @@ $sqla = "SELECT * FROM  ev_entregadas as ev
 $querya = $pdo->prepare($sqla);
 $querya->execute(array($evalucion));
 $rowa = $querya->rowCount();
+date_default_timezone_set("America/Bogota");
+$fecha=date('Y-m-d')
 ?>
 
 <main class="app-content">
@@ -48,8 +50,6 @@ $rowa = $querya->rowCount();
               <h3 class="title">
                 <?= $data['titulo']; ?>
               </h3>
-
-              <i class="fa fa-flag"></i>Evaluaciones</button><a></a></p>
             </div>
             <div class="title-body">
               <b>
@@ -81,11 +81,10 @@ $rowa = $querya->rowCount();
       $cargar = '';
       $alumno = $data2['alumno_id'];
       $ev_entregada = $data2['ev_entregada_id'];
-
       $sqln = "SELECT * FROM  notas Where ev_entregada_id= $ev_entregada";
       $queryn = $pdo->prepare($sqln);
       $queryn->execute();
-      $data = $queryn->rowCount();
+      $datan = $queryn->rowCount();
       if ($datan > 0) {
         $porcentaje = '<kbd class="bg-success">Calificado</kbd>';
         $cargar = '';
@@ -95,8 +94,6 @@ $rowa = $querya->rowCount();
         $cargar = '<button class="btn btn-warning" onclick="modalNota()">Cargar nota</button>';
       }
       ?>
-    
-
     <div class="col-md-12">
       <div class="tile">
         <table class="table table-bordered">
@@ -136,8 +133,6 @@ $rowa = $querya->rowCount();
 
 <?php } }?>
 </div>
-
-
   <div class="row">
     <a href="contenido.php?curso=<?= $curso ?>" class="btn btn-info">
       << Volver Atras</a>

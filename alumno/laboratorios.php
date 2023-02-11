@@ -42,7 +42,7 @@ $row = $query->rowCount();
                 <h4 class="card-title text-center"><?=$data['nombre_materia'] ?> - pilas</h4>
                 <h5 class="card-title"> Grado <kbd class="bg-info"><?= $data['nombre_grado'] ?></kbd> - Aula 
                 <kbd class="bg-info"><?=$data['nombre_aula']?></kdb></h5> 
-                <a href="contenido.php?curso=<?= $data['pm_id']?>" class="btn btn-primary">Acceder</a>
+                <a href="gestion-lab.php?id=1&materia=<?= $data['materia_id']?>" class="btn btn-primary">Acceder</a>
               </div>
             </div>
         </div>
@@ -54,7 +54,7 @@ $row = $query->rowCount();
                 <h4 class="card-title text-center"><?=$data['nombre_materia'] ?>- colas</h4>
                 <h5 class="card-title"> Grado <kbd class="bg-info"><?= $data['nombre_grado'] ?></kbd> - Aula 
                 <kbd class="bg-info"><?=$data['nombre_aula']?></kdb></h5> 
-                <a href="contenido.php?curso=<?= $data['pm_id']?>" class="btn btn-primary">Acceder</a>
+                <a href="gestion-lab.php?id=2&materia=<?= $data['materia_id']?>"class="btn btn-primary">Acceder</a>
               </div>
             </div>
         </div>
@@ -65,7 +65,7 @@ $row = $query->rowCount();
                 <h4 class="card-title text-center"><?=$data['nombre_materia'] ?>- array</h4>
                 <h5 class="card-title"> Grado <kbd class="bg-info"><?= $data['nombre_grado'] ?></kbd> - Aula 
                 <kbd class="bg-info"><?=$data['nombre_aula']?></kdb></h5> 
-                <a href="contenido.php?curso=<?= $data['pm_id']?>" class="btn btn-primary">Acceder</a>
+                <a href="gestion-lab.php?id=3&materia=<?= $data['materia_id']?>" class="btn btn-primary">Acceder</a>
               </div>
             </div>
         </div>

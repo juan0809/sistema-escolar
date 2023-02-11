@@ -42,11 +42,10 @@ if(!empty($_GET['curso'])||!empty($_GET['contenido'])){
                     
                     <a class="btn btn-warning icon-btn" href="entregas.php?curso=
                    <?= $curso;?>&contenido=<?= $data['contenido_id']; ?>  
-                   $eva=<?= $data['evaluacion_id']; ?>">
+                   &eva=<?= $data['evaluacion_id']; ?>">
                    <i class="fa fa-flag"></i>
                    Ver entregas</a></p>
                    
-                   <i class="fa fa-flag"></i>Evaluaciones</button><a></a></p>
                 </div>
                 <div class="title-body">
                     <b><?= $data['descripcion']; ?></b><br> <br> 
