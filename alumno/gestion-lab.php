@@ -56,8 +56,8 @@
     <textarea for="codigo" id="codigo" cols="50" rows="20" hidden><?=$codigo; ?></textarea>
 
     <!-- Label con la descripcion del laboratorio -->
-    <label for="titulo"><?=$titulo; ?></label>
-
+    <h3 class="display-10" > <label for="titulo"><?=$titulo; ?></label></h3>
+    <img src="http://www.oscarblancarteblog.com/wp-content/uploads/2014/08/pilain.png">
     <p for="descripcion" id="descripcion"><?=$descripcion; ?></p>
     
     <!-- Textarea con la respuesta del estudiante -->
