@@ -90,6 +90,7 @@
             const codigoJS = document.querySelector('.codigo');
             hljs.highlightBlock(codigoJS);
            });
+           
           //When user click on add input button
           $(add_button).click(function(e){
                 e.preventDefault();
