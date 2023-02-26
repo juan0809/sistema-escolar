@@ -67,78 +67,83 @@
         <script src="./script.js"></script>
     </body>
 </html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"/>
-<div class="form-inline" >
-  <div id="field_wrapper" class="col-lg-8 col-12">
-    <div>
-      <input type="text" class="form-control mr-2 mb-2" name="field_name[]"
-       placeholder="Correo"/><a href="javascript:void(0);" class="btn btn-info" id="add_button"><i class="fas fa-plus"></i></a>
-       <script>
-        $(document).ready(function(){
-    var maxField = 10; 
-    var addButton = $('#add_button');
-    var wrapper = $('#field_wrapper'); 
-    var fieldHTML = '<div><input type="text" class="form-control mr-2 mb-2" name="field_name[]" placeholder="Correo"/><a href="javascript:void(0);" class="btn btn-danger" id="remove_button"><i class="fas fa-minus"></i></a></div>';
-    var x = 1; 
-    $(addButton).click(function(){ 
-        if(x < maxField){ 
-            x++; 
-            $(wrapper).append(fieldHTML); 
-        }
-    });
-    $(wrapper).on('click', '#remove_button', function(e){ 
-        e.preventDefault();
-        $(this).parent('div').remove(); 
-        x--;
-    });
-});
-       </script>
+
+<form name="FormData" method="post" action="" >
+    <div class="wrapper">
     </div>
-   </div>
-</div>
-    
-    <?php
-    
-    # La lista de nombres; por defecto vacía
-    $nombres = [];
-    # Si hay nombres enviados por el formulario; entonces
-    # la lista es el formulario.
-    # Cada que lo envíen, se agrega un elemento a la lista
-    if (isset($_POST["nombres"])) {
-        $nombres = $_POST["nombres"];
-    }
-    if (isset($_POST["guardar"])) {
-        # Quieren guardar; no quieren agregar campos
-        echo "OK se guarda lo siguiente:<br>";
-        print_r($nombres);
-        exit;
-    }
-    ?>
-    <form method="post" action="Laboratorios.php">
-        <!--Comienza el ciclo que dibuja los campos dinámicos-->
-        <?php foreach ($nombres as $nombre) { ?>
-          <div class="col-lg-5 col-12">
-             <h3 class="title"><label for="control-label">Titulo de la tarea </label> </h3>
-            <input value="<?php echo $nombre ?>" type="text" name="nombres[]">
-            </div>
-            <br><br>
-        <?php } ?>
+    </form>  
+    <link rel="stylesheet" href="path/to/styles/default.css">
+    <script src="path/to/highlight.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script> 
+      <script>
+        //Add Input Fields
+        $(document).ready(function() {
+            var max_fields = 10; //Maximum allowed input fields 
+            var wrapper    = $(".wrapper"); //Input fields wrapper
+            var add_button = $(".add_fields"); //Add button class or ID
+            var add_button2 = $(".add_field"); //Add button class or ID
+            var add_button3 = $(".codigo"); //Add button class or ID
+            var add_button4 = $(".codigou"); //Add button class or ID
+            var x = 1; //Initial input field is set to 1
+            document.addEventListener('DOMContentLoaded', () => {
+            const codigoJS = document.querySelector('.codigo');
+            hljs.highlightBlock(codigoJS);
+           });
+          //When user click on add input button
+          $(add_button).click(function(e){
+                e.preventDefault();
+            //Check maximum allowed input fields
+                if(x < max_fields){ 
+                    x++; //input field increment
+               //add input field
+                    $(wrapper).append('<div class="col-lg-5 col-12"><form> <div class="form-group"><input type="text" name="input_array_name[]" cols="40" placeholder="Agregue Titulo" /> <a href="javascript:void(0);" class="remove_field">Remove</a></div> </form></div>');
+                }
+            });
 
-        
-        <!--Termina el ciclo que dibuja los campos dinámicos-->
+            $(add_button2).click(function(e){
+                e.preventDefault();
+            //Check maximum allowed input fields
+                if(x < max_fields){ 
+                    x++; //input field increment
+               //add input field
+                    $(wrapper).append('<div class="col-lg-28 col-12"><form> <div class="form-group"><textarea name="input_array_names[]" rows="4" cols="78" placeholder="Agregue la descripcion" /> <a href="javascript:void(0);" class="remove_field">Remove</a></div> </form></div>');
+                }
+            });
 
-        <!--Fuera de la lista tenemos siempre este campo, es el primero-->
-        <div class="col-lg-5 col-12">
-        <h3 class="title"><label for="control-label">Titulo de la tarea </label> </h3>
-        <input autocomplete="off" autofocus value="" type="text" name="nombres[]">
-        <br><br>
-        </div>
-        <button  class="btn btn-success" name="agregar" type="submit">Agregar titulo</button>
-        <button  class="btn btn-info " name="area" type="submit">Agregar Descripcion</button>
-        <button  class="btn btn-warning " name="area" type="submit">Agregar codigo</button>
-        <button  class="btn btn-success" name="agregar" type="submit">Agregar Codigo U</button>
+            $(add_button3).click(function(e){
+                e.preventDefault();
+            //Check maximum allowed input fields
+                if(x < max_fields){ 
+                    x++; //input field increment
+               //add input field
+                    $(wrapper).append('<div class="col-lg-28 col-12"><form> <div class="form-group"><textarea  class="codigo" name="input_array_names[]" rows="4" cols="78" placeholder="Agregue la descripcion" /> <a href="javascript:void(0);" class="remove_field">Remove</a></div> </form></div>');
+                }
+            });
+
+            $(add_button4).click(function(e){
+                e.preventDefault();
+            //Check maximum allowed input fields
+                if(x < max_fields){ 
+                    x++; //input field increment
+               //add input field
+                    $(wrapper).append('<div class="col-lg-28 col-12"><form> <div class="form-group"><textarea name="input_array_names[]" rows="4" cols="78" placeholder="Agregue la descripcion" /> <a href="javascript:void(0);" class="remove_field">Remove</a></div> </form></div>');
+                }
+            });
+          
+            //when user click on remove button
+            $(wrapper).on("click",".remove_field", function(e){ 
+                e.preventDefault();
+            $(this).parent('div').remove(); //remove inout field
+            x--; //inout field decrement
+            })
+        });
+        </script>
+    </form>  
+         <button  class="btn btn-success add_fields" name="agregar" type="submit">Agregar Titulo</button>
+        <button  class="btn btn-info add_field">Agregar Descripcion</button>
+        <button  class="btn btn-warning codigo" name="area" type="submit">Agregar codigo</button>
+        <button  class="btn btn-success codigou" name="agregar" type="submit">Agregar Codigo U</button>
         <button  class="btn btn-info " name="area" type="submit">Agregar Imagen</button>
         <button  class="btn btn-danger icon-btn" name="guardar" type="submit">Guardar</button>
         <button  class="btn btn-warning " name="area" type="submit">Actualizar</button>
