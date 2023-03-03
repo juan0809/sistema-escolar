@@ -36,7 +36,7 @@
                   while($data = $query->fetch()){
               ?>
                 <li><a class="treeview-item" href="contenido.php?curso=<?= $data['pm_id']?>"><i class="icon fa fa-cicle-o"></i><?= $data['nombre_materia'];?> - <?= $data['nombre_grado']; ?> - <?= $data['nombre_aula'];?></a></li>
-                <li><a class="app-menu__item" href="Laboratorios.php"></i><span class="app-menu__label">Laboratorios</span></a></li>
+                <li><a class="app-menu__item" href="Lista laboratorios.php"></i><span class="app-menu__label">Laboratorios</span></a></li>
                 <?php } } ?>
         </ul>
         <li><a class="app-menu__item" href="../logout.php"><i class="app-menu__icon fas fa-sign-out-alt"></i><span class="app-menu__label">Logout</span></a></li>
